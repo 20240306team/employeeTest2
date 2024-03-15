@@ -10,4 +10,6 @@ public interface EmployeeMapper {
     EmployeeDTO isEmployee(MemberDTO memberDTO);
 
     GetPhoneNumber getPhoneNumber(Map<String, String> parameter);
+
+    int updateEmpInfo(Map<String, String> parameter);
 }

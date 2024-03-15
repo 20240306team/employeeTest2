@@ -89,6 +89,8 @@ public class EmployeeController {
                     case 9:
                         return;
                 }
+            }else{
+                System.out.println("회사사원이 아닙니다 작업을 수행할수 없습니다");
             }
         } while (true);
 

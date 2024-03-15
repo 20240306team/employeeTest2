@@ -20,7 +20,7 @@ public class Application2 {
 
                 switch (no) {
                     case 1 : employeeController2.employeeInformation(); break;
-//                    case 2 : employeeController2.updateBonus(); break;
+                    case 2 : employeeController2.updateBonus(); break;
                 }
             } while (true);
 

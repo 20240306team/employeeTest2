@@ -25,7 +25,9 @@
         where
             EMP_ID =#{id}
     </select>
-
-
-
+    <update id="salLevel" parameterType="hashmap">
+        UPDATE EMPLOYEE
+        SET SAL_LEVEL=#{salLevel}
+        WHERE EMP_ID=#{id}
+    </update>
 </mapper>

@@ -13,6 +13,8 @@ public interface ManagerMapper {
     UpdateBonus updateBonus(Map<String, String> parameter);
 
     EmployeeDTO isEmployeeDTO(Map<String, String> parameter);
+
+    int salLevel(Map<String, String> parameter);
 }
 
 

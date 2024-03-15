@@ -82,16 +82,10 @@ public class EmployeeController {
                         printResult.printOnePerson(phonenumber);
                         break;
                     case 2:
-                        EmployeeDTO emp = new EmployeeDTO();
-                        printResult.printSalary(emp);
                         break;
                     case 3:
-                        if(employeeService.updateEmpInfo(inputEmpInfo(memberDTO))) {
-                            System.out.println("등록 성공");
-                        }else{
-                            System.out.println("등록 실패");
-                        }
-                        break;
+                        printResult.success((employeeService.updateEmpInfo(inputEmpInfo(memberDTO))));
+
                     case 9:
                         return;
                 }

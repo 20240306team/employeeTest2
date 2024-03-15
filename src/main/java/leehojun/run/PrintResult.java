@@ -11,7 +11,13 @@ public class PrintResult {
         }
     }
 
-    public void printSalary(EmployeeDTO emp) {
 
+    public void success(boolean b) {
+        if(b){
+            System.out.println("수정 성공");
+        }
+        else{
+            System.out.println("수정 실패");
+        }
     }
 }

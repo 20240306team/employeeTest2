@@ -21,7 +21,9 @@ public class Application {
                 case 1:
                     employeeController.login();
                     break;
-                case 2: break;
+                case 2:
+                    employeeController.getMember();
+                    break;
                 case 9: return;
             }
         }while(true);

@@ -1,5 +1,6 @@
 package common;
 
+import leehojun.common.EmployeeMapper;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
@@ -22,6 +23,7 @@ public class Template {
             Environment e = new Environment("dev",new JdbcTransactionFactory(),new PooledDataSource(driver,url,user,pass));
             Configuration config = new Configuration(e);
             // 자신의 매퍼를 여기에 추가하세요(cofig.addMapper(매퍼명.class)
+            config.addMapper(EmployeeMapper.class);
             sf = new SqlSessionFactoryBuilder().build(config);
 
         }

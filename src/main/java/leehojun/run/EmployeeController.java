@@ -7,4 +7,3 @@ public class EmployeeController {
         Scanner scr = new Scanner(System.in);
         System.out.println("============================================================");
     }
-}

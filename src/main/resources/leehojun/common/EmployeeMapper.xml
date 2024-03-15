@@ -35,4 +35,16 @@
         where
             EMP_NAME = #{name}
     </select>
+    <update id="updateEmpInfo" parameterType="hashmap">
+        update employee
+        <set>
+            <if test="email != null">
+                EMAIL = #{email}
+            </if>
+            <if test="phone !=null">
+                , PHONE = #{phone}
+            </if>
+        </set>
+        where EMP_ID = #{empId}
+    </update>
 </mapper>

@@ -28,8 +28,9 @@ sout 메뉴를 선택하세요
 
 3-1 .내 연봉확인하기 (조건은 자동으로 연동만 하면 됨 (로그인한 정보와 이름, email 같은 것만 볼 수 있게 설정)) 보너스 레벨 join 미니멈, 멕시멈 이 사이에 있는 확인 후 보너스 금액 확인 
 
-보너스 있는 달의 월급은
-            min_sal< A=salary*(1+bonus) <max_sal (max_sal 을 넘게 되면 최대 max_sal 까지만 받게 된다) 
+보너스 있는 달의 월급은 \n
+
+            min_sal< A=salary*(1+bonus) <max_sal (max_sal 을 넘게 되면 최대 max_sal 까지만 받게 된다) \n
 이고
 전체 연봉은
             A+salary*11

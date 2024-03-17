@@ -1,6 +1,7 @@
 package leehojun.common;
 
 import common.EmployeeDTO;
+import leehojun.run.EmployeeAndSalGrade;
 import leehojun.run.GetPhoneNumber;
 import leehojun.run.MemberDTO;
 
@@ -12,4 +13,8 @@ public interface EmployeeMapper {
     GetPhoneNumber getPhoneNumber(Map<String, String> parameter);
 
     int updateEmpInfo(Map<String, String> parameter);
+
+    int getEntireSal(EmployeeAndSalGrade employeeAndSalGrade);
+
+    EmployeeAndSalGrade getEmployeeAndSalGrade(MemberDTO memberDTO);
 }

@@ -32,6 +32,8 @@ public class Application {
         // pr 템플릿 확인하기
         // pr 템플릿 확인 2
         // 3차
+        // pr 템플릿을 해당 공유 레퍼지토리내 .github/pull_request_template.md 를 만드는 거였어
+        //내 저장소에 저장하면 자동으로 연동 되는 것 아니었네
 
     }
 }

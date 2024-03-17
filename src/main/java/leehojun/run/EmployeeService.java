@@ -46,4 +46,19 @@ public class EmployeeService {
         return result>0? true:false;
 
     }
+
+    public int getEntireSal(EmployeeAndSalGrade employeeAndSalGrade) {
+
+        SqlSession session  = getSqlSession();
+        mapper = session.getMapper(EmployeeMapper.class);
+
+        return mapper.getEntireSal(employeeAndSalGrade);
+    }
+
+    public EmployeeAndSalGrade getEmployeeAndSalGrade(MemberDTO memberDTO) {
+        SqlSession session = getSqlSession();
+        mapper = session.getMapper(EmployeeMapper.class);
+
+        return mapper.getEmployeeAndSalGrade(memberDTO);
+    }
 }

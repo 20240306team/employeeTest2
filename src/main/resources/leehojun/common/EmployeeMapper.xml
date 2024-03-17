@@ -47,4 +47,50 @@
         </set>
         where EMP_ID = #{empId}
     </update>
+<!--필기. 나중에 파라미터 타입으로 쓰려고 했는데 min_sal 과 max_sal을 property로 읽지 못한다
+         이를 해결하기 위해서 클래스가 아닌 필드값으로 만드려고 한다-->
+<!--    <resultMap id="employeeAndSalGrade" type="leehojun.run.EmployeeAndSalGrade">-->
+<!--        <id property="empId" column="EMP_ID"/>-->
+<!--        <result property="name" column="EMP_NAME"/>-->
+<!--        <result property="empNo" column="EMP_NO"/>-->
+<!--        <result property="email" column="EMAIL"/>-->
+<!--        <result property="bonus" column="BONUS"/>-->
+<!--        <result property="salary" column="SALARY"/>-->
+<!--        <association property="salGrade" javaType="leehojun.run.SalGrade">-->
+<!--            <id property="salLevel" column="SAL_LeveL"/>-->
+<!--            <result property="minSal" column="MIN_SAL"/>-->
+<!--            <result property="maxSal" column="MAX_SAL"/>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+    <resultMap id="employeeAndSalGrade" type="leehojun.run.EmployeeAndSalGrade">
+        <id property="empId" column="EMP_ID"/>
+        <result property="name" column="EMP_NAME"/>
+        <result property="empNo" column="EMP_NO"/>
+        <result property="email" column="EMAIL"/>
+        <result property="bonus" column="BONUS"/>
+        <result property="salary" column="SALARY"/>
+        <result property="salLevel" column="SAL_LEVE"/>
+        <result property="minSal" column="MIN_SAL"/>
+        <result property="maxSal" column="MAX_SAL"/>
+    </resultMap>
+    <select id="getEmployeeAndSalGrade" resultMap="employeeAndSalGrade" parameterType="leehojun.run.MemberDTO">
+        select
+            a.EMP_ID,
+            a.EMP_NAME,
+            a.EMP_NO,
+            a.EMAIL,
+            a.BONUS,
+            a.SALARY,
+            b.SAL_LEVEL,
+            b.MIN_SAL,
+            b.MAX_SAL
+        from
+            employee a
+        join
+            sal_grade b
+        on
+            a.SAL_LEVEL = b.SAL_LEVEL
+        where
+            EMP_ID = #{empId}
+    </select>
 </mapper>

@@ -25,6 +25,7 @@ public class EmployeeController {
         String email = scr.nextLine();
         System.out.print("사원번호 : ");
         String empId = scr.nextLine();
+        System.out.println("=============================================================");
         memberDTO.setName(name);
         memberDTO.setEmail(email);
         memberDTO.setEmpId(empId);
@@ -62,6 +63,7 @@ public class EmployeeController {
         String email = scr.nextLine();
         System.out.print("사원번호 : ");
         String empId = scr.nextLine();
+        System.out.println("============================================================");
         memberDTO.setName(name);
         memberDTO.setEmail(email);
         memberDTO.setEmpId(empId);
@@ -76,12 +78,17 @@ public class EmployeeController {
                 System.out.println("9. 이전 메뉴로 돌아가기");
                 System.out.print("메뉴를 선택하세요 : ");
                 int no = scr.nextInt();
+                System.out.println("===========================================================");
                 switch (no) {
                     case 1:
                         GetPhoneNumber phonenumber = employeeService.getPhoneNumber(inputName());
                         printResult.printOnePerson(phonenumber);
                         break;
                     case 2:
+//                        int entireSal = employeeService.getEntireSal(getSalInfo(memberDTO));
+//                        System.out.println(memberDTO.getName()+"의 총 연봉은 "+entireSal+" 입니다");
+                        EmployeeAndSalGrade employeeAndSalGrade = getSalInfo(memberDTO);
+                        printResult.printSal(employeeAndSalGrade);
                         break;
                     case 3:
                         printResult.success((employeeService.updateEmpInfo(inputEmpInfo(memberDTO))));
@@ -95,6 +102,10 @@ public class EmployeeController {
         } while (true);
 
 
+    }
+
+    private EmployeeAndSalGrade getSalInfo(MemberDTO memberDTO) {
+        return employeeService.getEmployeeAndSalGrade(memberDTO);
     }
 
     private Map<String,String> inputEmpInfo(MemberDTO memberDTO) {

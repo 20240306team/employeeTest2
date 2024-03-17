@@ -19,11 +19,11 @@ public class EmployeeDTO {
     private String managerId;
     private Date hireDate;
     private Date entDate;
-    private String endYn;
+    private String entYN;
 
     public EmployeeDTO(){}
 
-    public EmployeeDTO(String empId, String empName, String empNo, String email, String phone, String deptCode, String jobCode, String salLevel, int salary, double bonus, String managerId, Date hireDate, Date entDate, String endYn) {
+    public EmployeeDTO(String empId, String empName, String empNo, String email, String phone, String deptCode, String jobCode, String salLevel, int salary, double bonus, String managerId, Date hireDate, Date entDate, String entYN) {
         this.empId = empId;
         this.empName = empName;
         this.empNo = empNo;
@@ -37,7 +37,7 @@ public class EmployeeDTO {
         this.managerId = managerId;
         this.hireDate = hireDate;
         this.entDate = entDate;
-        this.endYn = endYn;
+        this.entYN = entYN;
     }
 
     public String getEmpId() {
@@ -144,12 +144,12 @@ public class EmployeeDTO {
         this.entDate = entDate;
     }
 
-    public String getEndYn() {
-        return endYn;
+    public String getEnTYn() {
+        return entYN;
     }
 
-    public void setEndYn(String endYn) {
-        this.endYn = endYn;
+    public void setEnTYn(String endYn) {
+        this.entYN = endYn;
     }
 
     @Override
@@ -168,7 +168,7 @@ public class EmployeeDTO {
                 ", managerId='" + managerId + '\'' +
                 ", hireDate=" + hireDate +
                 ", entDate=" + entDate +
-                ", endYn='" + endYn + '\'' +
+                ", enTYn='" + entYN + '\'' +
                 '}';
     }
 }

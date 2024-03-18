@@ -21,7 +21,7 @@ public class Application {
                     if(EmpService.loginsuccess(loginOk.Ok())){
                         Logingogo.success();
                     }else {
-                        System.out.println("씨발 로그인 다시입력해");
+                        System.out.println("로그인 다시입력해");
                     }break;
 
 

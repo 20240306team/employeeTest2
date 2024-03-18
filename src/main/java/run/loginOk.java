@@ -1,8 +1,12 @@
 package run;
 
 import common.EmployeeDTO;
+import org.apache.ibatis.session.SqlSession;
 
 import java.util.Scanner;
+
+import static common.Template.getSqlSession;
+
 
 public class loginOk {
 
@@ -20,5 +24,17 @@ public class loginOk {
         employeeDTO.setEmpName(empName);
         employeeDTO.setEmpId(empId);
     return employeeDTO ;
+    }
+
+    public static EmployeeDTO serch() {
+        SqlSession sqlSession = getSqlSession();
+        EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+
+        EmployeeDTO employeeDTO = new EmployeeDTO();
+        System.out.println(employeeDTO.getEmpId());
+
+        System.out.println(mapper);
+        sqlSession.close();
+        return null;
     }
 }
